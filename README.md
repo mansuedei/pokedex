@@ -1,3 +1,11 @@
+# Course
+
+EPAM js-lab-march2020
+
+# Student
+
+Iana Stepanova
+
 # Pokedex
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
