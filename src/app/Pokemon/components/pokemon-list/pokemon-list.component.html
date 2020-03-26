@@ -1,5 +1,24 @@
-<ul>
-  <li *ngFor="let pokemon of pokemon">
-    {{ pokemon.name }}
+<ul class="pokemon-list">
+  <li class="pokemon-item" *ngFor="let pokemon of pokemon">
+    <div class="card border-primary mb-3" style="width: 20rem">
+      <div class="card-header">
+        <p class="card-name">{{ pokemon.name | uppercase }}</p>
+        <button type="button" class="btn btn-success">Catch</button>
+      </div>
+      <div class="card-body">
+        <div class="card-image-container">
+          <img
+            class="card-image-file"
+            src="assets/images/{{ pokemon.id }}.png"
+            alt=""
+          />
+        </div>
+
+        <div class="card-text-container">
+          <p class="card-damage card-text">Damage: {{ pokemon.damage }}</p>
+          <p class="card-ID card-text"># {{ pokemon.id }}</p>
+        </div>
+      </div>
+    </div>
   </li>
 </ul>

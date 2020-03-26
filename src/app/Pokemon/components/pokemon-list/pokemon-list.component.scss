@@ -1,0 +1,71 @@
+.pokemon-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-item {
+  display: flex;
+  text-align: center;
+}
+
+.card {
+  margin: 1rem !important;
+}
+
+.card-header {
+  display: flex;
+  align-items: stretch;
+}
+
+.card-name {
+  margin: 0;
+  vertical-align: middle;
+  flex: 1;
+  text-align: left;
+  padding-top: 7px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-image-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card-image-file {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.card-text-container {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.card-text {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.card-damage {
+  text-align: left;
+}
+
+.card-ID {
+  text-align: right;
+}

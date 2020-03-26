@@ -3811,4 +3811,4 @@ const arrayOfPokemons: Pokemon[] = [
   }
 ];
 
-export const pokemonWithDamage = addPokemonDamage(arrayOfPokemons.slice(0, 11));
+export const pokemonWithDamage = addPokemonDamage(arrayOfPokemons.slice(0, 12));
