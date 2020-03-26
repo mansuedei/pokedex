@@ -1,6 +1,10 @@
 <ul class="pokemon-list">
   <li class="pokemon-item" *ngFor="let pokemon of pokemon">
-    <div class="card border-primary mb-3" style="width: 20rem">
+    <div
+      class="card border-primary mb-3"
+      style="width: 20rem"
+      [ngClass]="{ 'high-damage': pokemon.damage > 50 }"
+    >
       <div class="card-header">
         <p class="card-name">{{ pokemon.name | uppercase }}</p>
         <button type="button" class="btn btn-success">Catch</button>
