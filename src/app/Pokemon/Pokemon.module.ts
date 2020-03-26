@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './components/home/home.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 
+import {HeaderComponent} from "./components/header/header.component";
+import {PokemonListComponent} from "./components/pokemon-list/pokemon-list.component";
 
 
 @NgModule({
-  declarations: [HomeComponent, SearchBarComponent, PokemonCardComponent],
+  declarations: [
+    HeaderComponent,
+    PokemonListComponent
+  ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    HeaderComponent,
+    PokemonListComponent
   ]
 })
 export class PokemonModule { }
