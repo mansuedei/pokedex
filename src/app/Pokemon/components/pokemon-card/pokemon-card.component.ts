@@ -10,8 +10,6 @@ export class PokemonCardComponent {
   @Input() pokemon: Pokemon;
   caught: boolean = false;
 
-  displayConsoleMessage(pokemonName: string): void {}
-
   changePokemonStatus(e, pokemonName: string): void {
     this.caught = e.target.checked;
     if (!this.caught) {
