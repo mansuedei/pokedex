@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { pokemonWithInfo } from "../../pokemon";
+import { Pokemons } from "../../pokemon";
 
 @Component({
   selector: "app-pokemon-list",
@@ -8,11 +8,5 @@ import { pokemonWithInfo } from "../../pokemon";
   styleUrls: ["./pokemon-list.component.scss"]
 })
 export class PokemonListComponent {
-  pokemon = pokemonWithInfo;
-
-  displayConsoleMessage(pokemonName: string): void {
-    console.log(`${pokemonName} was successfully caught!`);
-  }
-
-  changePokemonStatus(e) {}
+  pokemons = Pokemons;
 }

@@ -1,11 +1,11 @@
-type Pokemon = {
+type PokemonType = {
   name: string;
   id: number;
   caught?: boolean;
   damage?: number;
 };
 
-function addPokemonInfo(arrayOfPokemons: Pokemon[]): Pokemon[] {
+function addPokemonInfo(arrayOfPokemons: PokemonType[]): PokemonType[] {
   arrayOfPokemons.forEach(element => {
     const randomizedNumber = Math.floor(Math.random() * 100);
     element.damage = randomizedNumber;
@@ -14,7 +14,7 @@ function addPokemonInfo(arrayOfPokemons: Pokemon[]): Pokemon[] {
   return arrayOfPokemons;
 }
 
-const arrayOfPokemons: Pokemon[] = [
+const arrayOfPokemons: PokemonType[] = [
   {
     name: "bulbasaur",
     id: 1
@@ -3813,4 +3813,11 @@ const arrayOfPokemons: Pokemon[] = [
   }
 ];
 
-export const pokemonWithInfo = addPokemonInfo(arrayOfPokemons.slice(0, 12));
+export const Pokemons = addPokemonInfo(arrayOfPokemons.slice(0, 12));
+
+export interface Pokemon {
+  name: string;
+  id: number;
+  caught?: boolean;
+  damage?: number;
+}
