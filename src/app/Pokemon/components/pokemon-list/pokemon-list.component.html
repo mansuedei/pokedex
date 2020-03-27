@@ -7,7 +7,16 @@
     >
       <div class="card-header">
         <p class="card-name">{{ pokemon.name | uppercase }}</p>
-        <button type="button" class="btn btn-success">Catch</button>
+        <button
+          type="button"
+          class="btn btn-success"
+          [ngClass]="{ 'btn-success': !caught }"
+          [ngClass]="{ 'btn-danger': caught }"
+          on-click="displayConsoleMessage(pokemon.name)"
+          on-click="togglePokemonStatus()"
+        >
+          {{ caught ? "Release" : "Catch" }}
+        </button>
       </div>
       <div class="card-body">
         <div class="card-image-container">

@@ -1,13 +1,15 @@
 type Pokemon = {
   name: string;
   id: number;
+  caught?: boolean;
   damage?: number;
 };
 
-function addPokemonDamage(arrayOfPokemons: Pokemon[]): Pokemon[] {
+function addPokemonInfo(arrayOfPokemons: Pokemon[]): Pokemon[] {
   arrayOfPokemons.forEach(element => {
     const randomizedNumber = Math.floor(Math.random() * 100);
     element.damage = randomizedNumber;
+    element.caught = false;
   });
   return arrayOfPokemons;
 }
@@ -3811,4 +3813,4 @@ const arrayOfPokemons: Pokemon[] = [
   }
 ];
 
-export const pokemonWithDamage = addPokemonDamage(arrayOfPokemons.slice(0, 12));
+export const pokemonWithInfo = addPokemonInfo(arrayOfPokemons.slice(0, 12));
