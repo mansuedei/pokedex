@@ -1,3 +1,37 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container {
+  cursor: pointer;
+}
+
+.default-checkbox {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  &:checked ~ .custom-checkbox {
+    background-color: #f39c12;
+  }
+}
+
+.custom-checkbox {
+  color: #fff;
+  background-color: #3498db;
+  display: inline-block;
+  font-size: 400;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: 0.15s ease-in-out;
+}
+
 .pokemon-list {
   list-style-type: none;
   display: flex;

@@ -9,4 +9,14 @@ import { Pokemons } from "../../pokemon";
 })
 export class PokemonListComponent {
   pokemons = Pokemons;
+  displayAsList: boolean = false;
+
+  toggleView(e): void {
+    this.displayAsList = e.target.checked;
+    if (!this.displayAsList) {
+      console.log(`Display as cards`);
+    } else {
+      console.log(`Display as list`);
+    }
+  }
 }
