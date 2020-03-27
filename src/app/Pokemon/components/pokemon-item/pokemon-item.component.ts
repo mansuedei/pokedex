@@ -6,7 +6,7 @@ import { Pokemon } from "../../pokemon";
   templateUrl: "./pokemon-item.component.html",
   styleUrls: ["./pokemon-item.component.scss"]
 })
-export class PokemonCardComponent {
+export class PokemonItemComponent {
   @Input() pokemon: Pokemon;
   caught: boolean = false;
 
