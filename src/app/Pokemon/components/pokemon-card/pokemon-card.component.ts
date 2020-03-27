@@ -10,11 +10,14 @@ export class PokemonCardComponent {
   @Input() pokemon: Pokemon;
   caught: boolean = false;
 
-  displayConsoleMessage(pokemonName: string): void {
-    console.log(`${pokemonName} was successfully caught!`);
-  }
+  displayConsoleMessage(pokemonName: string): void {}
 
-  changePokemonStatus(e) {
+  changePokemonStatus(e, pokemonName: string): void {
     this.caught = e.target.checked;
+    if (!this.caught) {
+      console.log(`${pokemonName} was successfully released!`);
+    } else {
+      console.log(`${pokemonName} was successfully caught!`);
+    }
   }
 }

@@ -10,10 +10,9 @@
         <input
           type="checkbox"
           class="default-checkbox"
-          on-change="displayConsoleMessage(pokemon.name)"
           [(ngModel)]="checkboxToggler"
           data-md-icheck
-          (change)="changePokemonStatus($event)"
+          (change)="changePokemonStatus($event, pokemon.name)"
         />
         <div *ngIf="caught" class="custom-checkbox">
           Release
