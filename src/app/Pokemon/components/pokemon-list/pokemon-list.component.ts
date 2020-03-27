@@ -13,10 +13,5 @@ export class PokemonListComponent {
 
   toggleView(e): void {
     this.displayAsList = e.target.checked;
-    if (!this.displayAsList) {
-      console.log(`Display as cards`);
-    } else {
-      console.log(`Display as list`);
-    }
   }
 }
