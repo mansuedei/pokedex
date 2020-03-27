@@ -7,16 +7,22 @@
     >
       <div class="card-header">
         <p class="card-name">{{ pokemon.name | uppercase }}</p>
-        <button
-          type="button"
-          class="btn btn-success"
-          [ngClass]="{ 'btn-success': !caught }"
-          [ngClass]="{ 'btn-danger': caught }"
-          on-click="displayConsoleMessage(pokemon.name)"
-          on-click="togglePokemonStatus()"
-        >
-          {{ caught ? "Release" : "Catch" }}
-        </button>
+        <label class="button-container">
+          <input
+            type="checkbox"
+            class="default-checkbox"
+            on-change="displayConsoleMessage(pokemon.name)"
+            [(ngModel)]="caught"
+            data-md-icheck
+            (change)="changePokemonStatus($event)"
+          />
+          <div *ngIf="marked" class="custom-checkbox">
+            Release
+          </div>
+          <div *ngIf="!marked" class="custom-checkbox">
+            Catch
+          </div>
+        </label>
       </div>
       <div class="card-body">
         <div class="card-image-container">
