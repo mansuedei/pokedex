@@ -16,6 +16,6 @@ export class PokemonListComponent {
   }
 
   togglePokemonStatus(): void {
-    this.caught = !this.caught;
+    this.caught = this.caught;
   }
 }
