@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Pokemon } from '../../pokemon';
+import { PokemonClass } from '../../../models/PokemonClass';
 
 @Component({
   selector: 'app-pokemon-item',
@@ -7,7 +7,7 @@ import { Pokemon } from '../../pokemon';
   styleUrls: ['./pokemon-item.component.scss'],
 })
 export class PokemonItemComponent {
-  @Input() pokemon: Pokemon;
+  @Input() pokemon: PokemonClass;
   caught = false;
 
   changePokemonStatus(e, pokemonName: string): void {

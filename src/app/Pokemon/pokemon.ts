@@ -1,20 +1,15 @@
-type PokemonType = {
-  name: string;
-  id: number;
-  caught?: boolean;
-  damage?: number;
-};
+import { PokemonClass } from '../models/PokemonClass';
 
-function addPokemonInfo(arrayOfPokemons: PokemonType[]): PokemonType[] {
-  arrayOfPokemons.forEach((element) => {
+function addPokemonInfo(array: PokemonClass[]): PokemonClass[] {
+  array.forEach((element) => {
     const randomizedNumber = Math.floor(Math.random() * 100);
     element.damage = randomizedNumber;
     element.caught = false;
   });
-  return arrayOfPokemons;
+  return array;
 }
 
-const arrayOfPokemons: PokemonType[] = [
+const arrayOfPokemons: PokemonClass[] = [
   {
     name: 'bulbasaur',
     id: 1,
@@ -3814,10 +3809,3 @@ const arrayOfPokemons: PokemonType[] = [
 ];
 
 export const Pokemons = addPokemonInfo(arrayOfPokemons.slice(0, 12));
-
-export interface Pokemon {
-  name: string;
-  id: number;
-  caught?: boolean;
-  damage?: number;
-}
