@@ -1,9 +1,5 @@
 <li class="pokemon-item">
-  <div
-    class="card border-primary mb-3"
-    style="width: 20rem"
-    [ngClass]="{ 'high-damage': pokemon.damage > 50 }"
-  >
+  <div class="card" style="width: 20rem" [appHighlightDamage]="pokemon.damage">
     <div class="card-header">
       <p class="card-name">{{ pokemon.name | uppercase }}</p>
       <label class="button-container">
