@@ -1,14 +1,14 @@
-import { Component, Input } from "@angular/core";
-import { Pokemon } from "../../pokemon";
+import { Component, Input } from '@angular/core';
+import { Pokemon } from '../../pokemon';
 
 @Component({
-  selector: "app-pokemon-item",
-  templateUrl: "./pokemon-item.component.html",
-  styleUrls: ["./pokemon-item.component.scss"]
+  selector: 'app-pokemon-item',
+  templateUrl: './pokemon-item.component.html',
+  styleUrls: ['./pokemon-item.component.scss'],
 })
 export class PokemonItemComponent {
   @Input() pokemon: Pokemon;
-  caught: boolean = false;
+  caught = false;
 
   changePokemonStatus(e, pokemonName: string): void {
     this.caught = e.target.checked;

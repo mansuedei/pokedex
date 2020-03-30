@@ -1,15 +1,15 @@
-import { Directive, ElementRef, Renderer2, Input } from "@angular/core";
+import { Directive, ElementRef, Renderer2, Input } from '@angular/core';
 
 @Directive({
-  selector: "[appHighlightDamage]"
+  selector: '[appHighlightDamage]',
 })
 export class HighlightDamageDirective {
   @Input() set appHighlightDamage(damage: number) {
     if (damage > 50) {
       this.renderer2.setStyle(
         this.elementRef.nativeElement,
-        "border",
-        "2px solid red"
+        'border',
+        '2px solid red'
       );
     }
   }
