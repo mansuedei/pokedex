@@ -18,6 +18,6 @@ import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-de
     PokemonDetailsComponent,
   ],
   imports: [CommonModule, BrowserModule, FormsModule],
-  exports: [PokemonListComponent],
+  exports: [PokemonListComponent, PokemonDetailsComponent],
 })
 export class PokemonModule {}
