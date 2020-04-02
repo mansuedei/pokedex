@@ -1,1 +1,51 @@
-<p>pokemon-details works!</p>
+<div class="container">
+    <div class="pokemon-details">
+        <div class="details-header card-header">
+            <p class="details-ID"># {{ pokemons[0].id }}</p>
+        </div>
+        <div class="details-body card-body">
+            <div class="details-image-container">
+                <img
+                    class="details-image-file"
+                    src="assets/images/1.png"
+                    alt=""
+                />
+            </div>
+
+            <div class="details-text-container">
+                <p class="details-name"> {{ pokemons[0].name | uppercase }} </p>
+                <p class="card-detailed-info"
+                    >Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur vulputate felis vitae enim tempus maximus.
+                    Suspendisse pharetra tempus ligula. Nullam nec erat
+                    ultricies, posuere augue sit amet, congue ex.
+                </p>
+                <p class="card-detailed-info"
+                    >Aliquam luctus aliquet mauris. Proin ligula massa, viverra
+                    quis ultricies non, tempus ac dolor. Aliquam a libero et
+                    magna interdum aliquam. Ut in tempor ex, eu finibus felis.
+                    Nulla in interdum est, id semper orci.</p
+                >
+                <p class="card-detailed-info"
+                    >Aliquam luctus aliquet mauris. Proin ligula massa, viverra
+                    quis ultricies non, tempus ac dolor. Aliquam a libero et
+                    magna interdum aliquam. Ut in tempor ex, eu finibus felis.
+                    Nulla in interdum est, id semper orci.</p
+                >
+                <label class="button-container">
+                    <input
+                        type="checkbox"
+                        class="default-checkbox"
+                        (change)="changePokemonStatus($event)"
+                    />
+                    <div *ngIf="caught" class="custom-checkbox">
+                        Release
+                    </div>
+                    <div *ngIf="!caught" class="custom-checkbox">
+                        Catch
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon-details {
+  margin: 1rem !important;
+  border: 2px solid #333333;
+  border-radius: 5px;
+  width: 50rem;
+}
+
+.details-header {
+  display: flex;
+  align-items: stretch;
+}
+
+.details-name {
+  text-align: left;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.button-container {
+  margin: 0;
+  cursor: pointer;
+  &:hover .custom-checkbox {
+    border-color: #fff;
+  }
+}
+
+.default-checkbox {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  &:checked ~ .custom-checkbox {
+    background-color: #a43b38;
+  }
+}
+
+.custom-checkbox {
+  color: #fff;
+  background-color: #00bc8c;
+  display: inline-block;
+  font-size: 400;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: 0.15s ease-in-out;
+}
+
+.details-body {
+  display: flex;
+  align-items: center;
+}
+
+.details-image-container {
+  width: 150px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-right: 20px;
+}
+
+.details-image-file {
+  width: 100%;
+  height: auto;
+}
+
+.details-text-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.card-damage {
+  text-align: left;
+}
+
+.details-ID {
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  margin: 0;
+}
+
+.high-damage {
+  border-color: #e74c3c !important;
+  border-width: thick;
+}
