@@ -14,10 +14,18 @@
     </label>
 </nav>
 <ul *ngIf="displayAsList" class="pokemon-list">
-    <app-pokemon-item *ngFor="let pokemon of pokemons" [pokemon]="pokemon">
+    <app-pokemon-item
+        *ngFor="let pokemon of pokemons"
+        [pokemon]="pokemon"
+        (onStatusChange)="onStatusChange($event)"
+    >
     </app-pokemon-item>
 </ul>
 <ul *ngIf="!displayAsList" class="pokemon-list">
-    <app-pokemon-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon">
+    <app-pokemon-card
+        *ngFor="let pokemon of pokemons"
+        [pokemon]="pokemon"
+        (onStatusChange)="onStatusChange($event)"
+    >
     </app-pokemon-card>
 </ul>
