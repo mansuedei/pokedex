@@ -1,18 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <label class="button-container">
-        <input
-            type="checkbox"
-            class="default-checkbox"
-            (change)="toggleView($event)"
-        />
-        <div *ngIf="displayAsList" class="custom-checkbox">
-            Toggle to display as cards
-        </div>
-        <div *ngIf="!displayAsList" class="custom-checkbox">
-            Toggle to display as list
-        </div>
-    </label>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="navbar-container">
+        <label class="button-container">
+            <input
+                type="checkbox"
+                class="default-checkbox"
+                (change)="toggleView($event)"
+            />
+            <div *ngIf="displayAsList" class="custom-checkbox">
+                Toggle to display as cards
+            </div>
+            <div *ngIf="!displayAsList" class="custom-checkbox">
+                Toggle to display as list
+            </div>
+        </label>
+        <app-search-bar></app-search-bar>
+    </div>
 </nav>
+
 <ul *ngIf="displayAsList" class="pokemon-list">
     <app-pokemon-item
         *ngFor="let pokemon of pokemons"

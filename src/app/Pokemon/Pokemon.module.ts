@@ -9,6 +9,7 @@ import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.com
 import { HighlightDamageDirective } from './directives/highlight-damage.directive';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 import { PokemonService } from './services/pokemon-service.service';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { PokemonService } from './services/pokemon-service.service';
     PokemonCardComponent,
     HighlightDamageDirective,
     PokemonDetailsComponent,
+    SearchBarComponent,
   ],
   imports: [CommonModule, BrowserModule, FormsModule],
   exports: [PokemonListComponent, PokemonDetailsComponent],
