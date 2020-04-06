@@ -8,6 +8,7 @@ import { PokemonItemComponent } from './components/pokemon-item/pokemon-item.com
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { HighlightDamageDirective } from './directives/highlight-damage.directive';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
+import { PokemonService } from './services/pokemon-service.service';
 
 @NgModule({
   declarations: [
@@ -19,5 +20,6 @@ import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-de
   ],
   imports: [CommonModule, BrowserModule, FormsModule],
   exports: [PokemonListComponent, PokemonDetailsComponent],
+  providers: [PokemonService],
 })
 export class PokemonModule {}
