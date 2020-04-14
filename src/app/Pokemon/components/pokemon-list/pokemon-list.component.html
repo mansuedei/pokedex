@@ -13,7 +13,7 @@
                 Toggle to display as list
             </div>
         </label>
-        <app-search-bar></app-search-bar>
+        <app-search-bar (changed)="getByName($event)"></app-search-bar>
     </div>
 </nav>
 

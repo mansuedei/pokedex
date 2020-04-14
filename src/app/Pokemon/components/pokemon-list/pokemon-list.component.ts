@@ -23,6 +23,10 @@ export class PokemonListComponent {
     this.displayAsList = e.target.checked;
   }
 
+  getByName(name:string):void {
+    this.pokemons = this._pokemonService.getByName(name);
+  }
+
   onStatusChange(message: string): void {
     console.log(message);
   }
