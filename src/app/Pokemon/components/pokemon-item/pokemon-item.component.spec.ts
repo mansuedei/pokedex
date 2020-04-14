@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PokemonCardComponent } from './pokemon-card.component';
+import { PokemonCardComponent } from './pokemon-item.component';
 
 describe('PokemonCardComponent', () => {
   let component: PokemonCardComponent;
@@ -8,9 +8,8 @@ describe('PokemonCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PokemonCardComponent ]
-    })
-    .compileComponents();
+      declarations: [PokemonCardComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

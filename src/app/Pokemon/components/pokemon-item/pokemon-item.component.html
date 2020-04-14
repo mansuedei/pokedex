@@ -1,0 +1,32 @@
+<li class="pokemon-item">
+    <div
+        class="card"
+        style="width: 20rem"
+        [appHighlightDamage]="pokemon.damage"
+    >
+        <div class="card-header">
+            <p class="card-name">{{ pokemon.name | uppercase }}</p>
+            <label class="button-container">
+                <input
+                    type="checkbox"
+                    class="default-checkbox"
+                    (change)="changePokemonStatus($event, pokemon.name)"
+                />
+                <div *ngIf="caught" class="custom-checkbox">
+                    Release
+                </div>
+                <div *ngIf="!caught" class="custom-checkbox">
+                    Catch
+                </div>
+            </label>
+        </div>
+        <div class="card-body">
+            <div class="card-text-container">
+                <p class="card-damage card-text"
+                    >Damage: {{ pokemon.damage }}</p
+                >
+                <p class="card-ID card-text"># {{ pokemon.id }}</p>
+            </div>
+        </div>
+    </div>
+</li>
