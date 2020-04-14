@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonItemComponent } from './components/pokemon-item/pokemon-item.component';
@@ -20,7 +21,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     PokemonDetailsComponent,
     SearchBarComponent,
   ],
-  imports: [CommonModule, BrowserModule, FormsModule],
+  imports: [CommonModule, BrowserModule, FormsModule, RouterModule],
   exports: [PokemonListComponent, PokemonDetailsComponent],
   providers: [PokemonService],
 })

@@ -1,4 +1,5 @@
-<li class="pokemon-item">
+<a [routerLink]="['/details', pokemon.id]" class="no-styles-link">
+<li [routerLink]="['/pokemons', pokemon.id]" class="pokemon-item">
     <div
         class="card"
         style="width: 20rem"
@@ -18,6 +19,9 @@
                 <div *ngIf="!caught" class="custom-checkbox">
                     Catch
                 </div>
+                <button class="custom-checkbox edit-button">
+                    Edit
+                </button>
             </label>
         </div>
         <div class="card-body">
@@ -30,3 +34,4 @@
         </div>
     </div>
 </li>
+</a>

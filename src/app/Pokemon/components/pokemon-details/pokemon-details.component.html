@@ -1,7 +1,7 @@
-<div class="container">
+<div  class="container">
     <div class="pokemon-details">
         <div class="details-header card-header">
-            <p class="details-ID"># {{ pokemons[0].id }}</p>
+            <p class="details-ID"># {{ pokemon.id }}</p>
         </div>
         <div class="details-body card-body">
             <div class="details-image-container">
@@ -13,7 +13,7 @@
             </div>
 
             <div class="details-text-container">
-                <p class="details-name"> {{ pokemons[0].name | uppercase }} </p>
+                <p class="details-name"> {{ pokemon.name | uppercase }} </p>
                 <p class="card-detailed-info"
                     >Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Curabitur vulputate felis vitae enim tempus maximus.
@@ -36,13 +36,16 @@
                     <input
                         type="checkbox"
                         class="default-checkbox"
-                        (change)="changePokemonStatus($event)"
+                        (change)="changePokemonStatus($event, pokemon.name)"
                     />
                     <div *ngIf="caught" class="custom-checkbox">
                         Release
                     </div>
                     <div *ngIf="!caught" class="custom-checkbox">
                         Catch
+                    </div>
+                    <div class="custom-checkbox">
+                        Edit
                     </div>
                 </label>
             </div>
