@@ -14,4 +14,8 @@ export class PokemonListComponent {
   toggleView(e): void {
     this.displayAsList = e.target.checked;
   }
+
+  onStatusChange(message: string): void {
+    console.log(message);
+  }
 }

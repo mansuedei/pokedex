@@ -1,21 +1,30 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { PokemonClass } from '../../../models/PokemonClass';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
   styleUrls: ['./pokemon-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PokemonCardComponent {
   @Input() pokemon: PokemonClass;
   caught = false;
 
+  @Output() onStatusChange = new EventEmitter<string>();
+
   changePokemonStatus(e, pokemonName: string): void {
     this.caught = e.target.checked;
     if (!this.caught) {
-      console.log(`${pokemonName} was successfully released!`);
+      this.onStatusChange.emit(`${pokemonName} was successfully released!`);
     } else {
-      console.log(`${pokemonName} was successfully caught!`);
+      this.onStatusChange.emit(`${pokemonName} was successfully caught!`);
     }
   }
 }
