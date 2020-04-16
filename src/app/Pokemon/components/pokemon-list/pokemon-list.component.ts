@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-
-import { Pokemons } from '../../pokemon';
+import { Component, OnInit } from '@angular/core';
+import { PokemonService } from '../../services/pokemon-service.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -8,8 +7,14 @@ import { Pokemons } from '../../pokemon';
   styleUrls: ['./pokemon-list.component.scss'],
 })
 export class PokemonListComponent {
-  pokemons = Pokemons;
-  displayAsList = false;
+  public displayAsList = false;
+  public pokemons;
+
+  constructor(private _pokemonService: PokemonService) {}
+
+  ngOnInit() {
+    this.pokemons = this._pokemonService.getAll();
+  }
 
   toggleView(e): void {
     this.displayAsList = e.target.checked;
