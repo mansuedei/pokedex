@@ -9,11 +9,8 @@ import { PokemonService } from '../../services/pokemon-service.service';
 export class PokemonListComponent {
   public displayAsList = false;
   public pokemons;
-  private _pokemonService;
 
-  constructor(PokemonService: PokemonService) {
-    this._pokemonService = PokemonService;
-  }
+  constructor(private _pokemonService: PokemonService) {}
 
   ngOnInit() {
     this.pokemons = this._pokemonService.getAll();
