@@ -11,20 +11,21 @@ import { PokemonClass } from '../../../models/PokemonClass';
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
   styleUrls: ['./pokemon-card.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PokemonCardComponent {
   @Input() pokemon: PokemonClass;
-  caught = false;
 
   @Output() onStatusChange = new EventEmitter<string>();
 
-  changePokemonStatus(e, pokemonName: string): void {
-    this.caught = e.target.checked;
-    if (!this.caught) {
-      this.onStatusChange.emit(`${pokemonName} was successfully released!`);
+  changePokemonStatus(e, name: string, caught: boolean): boolean {
+    debugger;
+    caught = !caught;
+    if (!caught) {
+      this.onStatusChange.emit(`${name} was successfully released!`);
     } else {
-      this.onStatusChange.emit(`${pokemonName} was successfully caught!`);
+      this.onStatusChange.emit(`${name} was successfully caught!`);
     }
+    return caught;
   }
 }

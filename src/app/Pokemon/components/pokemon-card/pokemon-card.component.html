@@ -1,8 +1,7 @@
-<a [routerLink]="['/details', pokemon.id]" class="no-styles-link">
 <li class="pokemon-item">
     <div
         class="card"
-        style="width: 20rem"
+        style="width: 20rem;"
         [appHighlightDamage]="pokemon.damage"
     >
         <div class="card-header">
@@ -11,35 +10,42 @@
                 <input
                     type="checkbox"
                     class="default-checkbox"
-                    (change)="changePokemonStatus($event, pokemon.name)"
+                    (change)="
+                        changePokemonStatus(
+                            $event,
+                            pokemon.name,
+                            pokemon.caught
+                        )
+                    "
                 />
-                <div *ngIf="caught" class="custom-checkbox">
+                <div *ngIf="!changePokemonStatus" class="custom-checkbox">
                     Release
                 </div>
-                <div *ngIf="!caught" class="custom-checkbox">
+                <div *ngIf="changePokemonStatus" class="custom-checkbox">
                     Catch
                 </div>
-                <button class="custom-checkbox edit-button">
-                    Edit
-                </button>
             </label>
+            <button type="button" class="btn btn-secondary edit-button">
+                Edit
+            </button>
         </div>
-        <div class="card-body">
-            <div class="card-image-container">
-                <img
-                    class="card-image-file"
-                    src="assets/images/{{ pokemon.id }}.png"
-                    alt=""
-                />
-            </div>
+        <a [routerLink]="['/details', pokemon.id]" class="no-styles-link">
+            <div class="card-body">
+                <div class="card-image-container">
+                    <img
+                        class="card-image-file"
+                        src="assets/images/{{ pokemon.id }}.png"
+                        alt=""
+                    />
+                </div>
 
-            <div class="card-text-container">
-                <p class="card-damage card-text"
-                    >Damage: {{ pokemon.damage }}</p
-                >
-                <p class="card-ID card-text"># {{ pokemon.id }}</p>
+                <div class="card-text-container">
+                    <p class="card-damage card-text"
+                        >Damage: {{ pokemon.damage }}</p
+                    >
+                    <p class="card-ID card-text"># {{ pokemon.id }}</p>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 </li>
-</a>
