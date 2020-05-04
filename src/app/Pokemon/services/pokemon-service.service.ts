@@ -3814,23 +3814,28 @@ const Pokemons = addPokemonInfo(arrayOfPokemons.slice(0, 12));
   providedIn: 'root',
 })
 export class PokemonService {
-  constructor() { }
-  private pokemons: PokemonClass[]=Pokemons
+  constructor() {}
+  private pokemons: PokemonClass[] = Pokemons;
 
-  public getAll() {
+  public getAll(): PokemonClass[] {
     return this.pokemons;
   }
 
-  public getByName(name:string) {
-    debugger;
-    return this.pokemons.filter(function (pokemon: PokemonClass) {
-      return pokemon.name === name;
+  public getByName(searchedName: string): PokemonClass[] {
+    const pokemonFilteredByName = this.pokemons.filter((pokemon) => {
+      if (pokemon.name.includes(searchedName.toLowerCase())) {
+        return pokemon;
+      }
     });
+    return pokemonFilteredByName;
   }
 
-  public getByID() {
-    return this.pokemons.filter(function (pokemon: PokemonClass) {
-      return pokemon.id == 2; // will be later changed to the search input value
+  public getByID(searchedID: number): PokemonClass[] {
+    const pokemonFilteredByID = this.pokemons.filter((pokemon) => {
+      if (pokemon.id === searchedID) {
+        return pokemon;
+      }
     });
+    return pokemonFilteredByID;
   }
 }

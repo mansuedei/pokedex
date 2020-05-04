@@ -16,16 +16,13 @@ import { PokemonClass } from '../../../models/PokemonClass';
 export class PokemonCardComponent {
   @Input() pokemon: PokemonClass;
 
-  @Output() onStatusChange = new EventEmitter<string>();
+  @Output() CatchReleaseCheckboxChange = new EventEmitter<PokemonClass>();
 
-  changePokemonStatus(e, name: string, caught: boolean): boolean {
-    debugger;
-    caught = !caught;
-    if (!caught) {
-      this.onStatusChange.emit(`${name} was successfully released!`);
-    } else {
-      this.onStatusChange.emit(`${name} was successfully caught!`);
-    }
-    return caught;
+  onCatchReleaseCheckboxChange() {
+    this.CatchReleaseCheckboxChange.emit();
+  }
+
+  getCurrentPokemonStatus(pokemon: PokemonClass): string {
+    return pokemon.caught ? 'Release' : 'Catch';
   }
 }

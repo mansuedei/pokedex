@@ -21,7 +21,9 @@
     <app-pokemon-item
         *ngFor="let pokemon of pokemons"
         [pokemon]="pokemon"
-        (onStatusChange)="onStatusChange($event)"
+        (CatchReleaseCheckboxChange)="
+            changePokemonCaughtReleasedStatus(pokemon)
+        "
     >
     </app-pokemon-item>
 </ul>
@@ -29,7 +31,9 @@
     <app-pokemon-card
         *ngFor="let pokemon of pokemons"
         [pokemon]="pokemon"
-        (onStatusChange)="onStatusChange($event)"
+        (CatchReleaseCheckboxChange)="
+            changePokemonCaughtReleasedStatus(pokemon)
+        "
     >
     </app-pokemon-card>
 </ul>

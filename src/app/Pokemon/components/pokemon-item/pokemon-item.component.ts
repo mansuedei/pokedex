@@ -1,4 +1,10 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { PokemonClass } from '../../../models/PokemonClass';
 
 @Component({
@@ -9,16 +15,14 @@ import { PokemonClass } from '../../../models/PokemonClass';
 })
 export class PokemonItemComponent {
   @Input() pokemon: PokemonClass;
-  caught = false;
 
-  @Output() onStatusChange = new EventEmitter<string>();
+  @Output() CatchReleaseCheckboxChange = new EventEmitter<PokemonClass>();
 
-  changePokemonStatus(e, pokemonName: string): void {
-    this.caught = e.target.checked;
-    if (!this.caught) {
-      this.onStatusChange.emit(`${pokemonName} was successfully released!`);
-    } else {
-      this.onStatusChange.emit(`${pokemonName} was successfully caught!`);
-    }
+  onCatchReleaseCheckboxChange() {
+    this.CatchReleaseCheckboxChange.emit();
+  }
+
+  getCurrentPokemonStatus(pokemon: PokemonClass): string {
+    return pokemon.caught ? 'Release' : 'Catch';
   }
 }

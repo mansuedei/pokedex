@@ -34,9 +34,10 @@
   opacity: 0;
   height: 0;
   width: 0;
-  &:checked ~ .custom-checkbox {
-    background-color: #a43b38;
-  }
+}
+
+.caught-pokemon {
+  background-color: #a43b38 !important;
 }
 
 .custom-checkbox {

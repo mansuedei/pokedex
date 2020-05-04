@@ -10,19 +10,13 @@
                 <input
                     type="checkbox"
                     class="default-checkbox"
-                    (change)="
-                        changePokemonStatus(
-                            $event,
-                            pokemon.name,
-                            pokemon.caught
-                        )
-                    "
+                    (change)="onCatchReleaseCheckboxChange()"
                 />
-                <div *ngIf="!changePokemonStatus" class="custom-checkbox">
-                    Release
-                </div>
-                <div *ngIf="changePokemonStatus" class="custom-checkbox">
-                    Catch
+                <div
+                    class="custom-checkbox"
+                    [ngClass]="{ 'caught-pokemon': pokemon.caught }"
+                >
+                    {{ getCurrentPokemonStatus(pokemon) }}
                 </div>
             </label>
             <button type="button" class="btn btn-secondary edit-button">
